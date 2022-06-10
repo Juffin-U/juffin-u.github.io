@@ -40,13 +40,14 @@
           </div>
           <div class="sliderContainer">
             <div
-              style="height: 30px; width: 30px"
+              style="height: 100%"
               :style="{
-                backgroundImage: `url (http://localhost:8080/${arrOfIndex[indexOfImage]})`,
+                backgroundImage:
+                  'url(' +
+                  require(`../assets/${arrOfIndex[indexOfImage]}`) +
+                  ')',
               }"
-            >
-              {{ `url (http://localhost:8080/${arrOfIndex[indexOfImage]})` }}
-            </div>
+            />
             <button class="button" @click="indexOfImage += 1">
               контейнер для слайдера
             </button>
@@ -75,7 +76,6 @@ export default defineComponent({
       arrOfIndex,
       indexOfImage,
     };
-    // for (let i = 0; i < arrOfIndex.length; ) {}
   },
 });
 </script>
