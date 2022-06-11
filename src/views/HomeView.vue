@@ -33,9 +33,21 @@
         <div class="solidColumnContainer">
           <div class="linkContainer">
             <div class="lineImageContainer">
-              <router-link class="imgLeisure" to="/leisure-page"></router-link>
-              <router-link class="imgFood" to="/food-page"></router-link>
-              <router-link class="imgLodging" to="/lodging-page"></router-link>
+              <router-link
+                class="imgLeisure"
+                @mouseover="indexOfSection = 0"
+                to="/leisure-page"
+              ></router-link>
+              <router-link
+                class="imgFood"
+                @mouseover="indexOfSection = 1"
+                to="/food-page"
+              ></router-link>
+              <router-link
+                class="imgLodging"
+                @mouseover="indexOfSection = 2"
+                to="/lodging-page"
+              ></router-link>
             </div>
           </div>
           <div class="sliderContainer">
@@ -44,7 +56,7 @@
               :style="{
                 backgroundImage:
                   'url(' +
-                  require(`../assets/${arrOfIndex[indexOfImage]}`) +
+                  require(`../assets/${arrOfIndex[indexOfImage][indexOfSection]}`) +
                   ')',
               }"
             >
@@ -55,7 +67,9 @@
             <button
               class="button"
               @click="
-                indexOfImage > 0 ? (indexOfImage -= 1) : (indexOfImage = 3)
+                indexOfImage > 0
+                  ? (indexOfImage -= 1)
+                  : (indexOfImage = arrOfIndex[indexOfSection].length - 1)
               "
             >
               &lt;-
@@ -64,7 +78,7 @@
             <button
               class="button"
               @click="
-                indexOfImage < arrOfIndex.length - 1
+                indexOfImage < arrOfIndex[indexOfSection].length - 1
                   ? (indexOfImage += 1)
                   : (indexOfImage = 0)
               "
@@ -85,14 +99,39 @@ export default defineComponent({
   name: "HomeView",
   setup() {
     let indexOfImage = ref(0);
+    let indexOfSection = ref(0);
 
-    let arrOfIndex: Array<string> = [
-      "DSC_1627.jpg",
-      "DSC02445-min.webp",
-      "WhatsApp_Image_2022-.jpeg",
-      "WhatsApp_Image_2022-.webp",
+    let arrOfIndex: string[][] = [
+      [
+        "food2.jpg",
+        "food3.webp",
+        "food5.jpeg",
+        "food6.webp",
+        "food9.jpeg",
+        "food10.webp",
+      ],
+      [
+        "leisure2.jpg",
+        "leisure3.webp",
+        "leisure5.jpeg",
+        "leisure6.webp",
+        "leisure9.jpeg",
+        "leisure10.webp",
+        "leisure12.webp",
+        "leisure13.webp",
+      ],
+      [
+        "Looding2.jpg",
+        "Looding3.webp",
+        "Looding4.webp",
+        "Looding5.jpeg",
+        "Looding6.webp",
+        "Looding7.webp",
+        "Looding9.jpeg",
+      ],
     ];
     return {
+      indexOfSection,
       arrOfIndex,
       indexOfImage,
     };
