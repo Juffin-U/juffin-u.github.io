@@ -40,16 +40,36 @@
           </div>
           <div class="sliderContainer">
             <div
-              style="height: 100%"
+              style="height: 100%; background-size: cover"
               :style="{
                 backgroundImage:
                   'url(' +
                   require(`../assets/${arrOfIndex[indexOfImage]}`) +
                   ')',
               }"
-            />
-            <button class="button" @click="indexOfImage += 1">
-              контейнер для слайдера
+            >
+              {{ indexOfImage }}
+              {{ arrOfIndex.length }}
+              {{ `url (http://localhost:8080/${arrOfIndex[indexOfImage]})` }}
+            </div>
+            <button
+              class="button"
+              @click="
+                indexOfImage > 0 ? (indexOfImage -= 1) : (indexOfImage = 3)
+              "
+            >
+              &lt;-
+            </button>
+
+            <button
+              class="button"
+              @click="
+                indexOfImage < arrOfIndex.length - 1
+                  ? (indexOfImage += 1)
+                  : (indexOfImage = 0)
+              "
+            >
+              ->
             </button>
           </div>
         </div>
@@ -92,7 +112,7 @@ export default defineComponent({
 }
 .mainContainer {
   width: 100%;
-  height: 2160px;
+  height: 2660px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -109,17 +129,21 @@ export default defineComponent({
 }
 .sliderAndLinkContainer {
   width: 85%;
-  height: 100%;
+  height: 50%;
   margin: auto;
+  margin-bottom: 10%;
 }
 .linkContainer {
-  height: 100%;
+  height: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 .sliderContainer {
-  height: 100%;
+  height: 50%;
+  width: 40%;
+  margin: auto;
+  background-size: cover;
 }
 .mainInfoText {
   margin: auto;
@@ -178,8 +202,8 @@ export default defineComponent({
   margin-bottom: 35%;
 }
 .imgContainer {
-  background-image: url("../assets/DSC02445-min.webp");
-  background-repeat: no-repeat;
+  background: url("../assets/DSC02445-min.webp") no-repeat;
+  background-size: cover;
   height: 50%;
   align-items: center;
 }

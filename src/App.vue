@@ -1,5 +1,6 @@
 <template>
   <router-view />
+  <div class="basement">asdasdasd</div>
 </template>
 
 <style lang="scss">
@@ -9,6 +10,14 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+.basement {
+  width: 100%;
+  height: 200px;
+  background: #2c3e50;
+}
+body {
+  margin: 0;
 }
 
 nav {
