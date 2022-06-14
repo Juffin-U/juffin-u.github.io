@@ -36,17 +36,17 @@
               <router-link
                 class="imgLeisure"
                 @mouseover="indexOfSection = 0"
-                to="/leisure-page"
+                to="/leisure"
               ></router-link>
               <router-link
                 class="imgFood"
                 @mouseover="indexOfSection = 1"
-                to="/food-page"
+                to="/food"
               ></router-link>
               <router-link
                 class="imgLodging"
                 @mouseover="indexOfSection = 2"
-                to="/lodging-page"
+                to="/loodging"
               ></router-link>
             </div>
           </div>
@@ -61,8 +61,7 @@
               }"
             >
               {{ indexOfImage }}
-              {{ arrOfIndex.length }}
-              {{ `url (http://localhost:8080/${arrOfIndex[indexOfImage]})` }}
+              {{ arrOfIndex[indexOfSection].length }}
             </div>
             <button
               class="button"
@@ -103,31 +102,31 @@ export default defineComponent({
 
     let arrOfIndex: string[][] = [
       [
-        "food2.jpg",
+        "food2.webp",
         "food3.webp",
-        "food5.jpeg",
+        "food5.webp",
         "food6.webp",
-        "food9.jpeg",
+        "food9.webp",
         "food10.webp",
       ],
       [
-        "leisure2.jpg",
-        "leisure3.webp",
-        "leisure5.jpeg",
+        "leisure2.webp",
+        "leisure1.jpg",
+        "leisure5.webp",
         "leisure6.webp",
-        "leisure9.jpeg",
+        "leisure9.webp",
         "leisure10.webp",
         "leisure12.webp",
         "leisure13.webp",
       ],
       [
-        "Looding2.jpg",
+        "Looding2.webp",
         "Looding3.webp",
         "Looding4.webp",
-        "Looding5.jpeg",
+        "Looding5.webp",
         "Looding6.webp",
         "Looding7.webp",
-        "Looding9.jpeg",
+        "Looding9.webp",
       ],
     ];
     return {
@@ -169,8 +168,7 @@ export default defineComponent({
 .sliderAndLinkContainer {
   width: 85%;
   height: 50%;
-  margin: auto;
-  margin-bottom: 10%;
+  margin: auto auto 10%;
 }
 .linkContainer {
   height: 50%;

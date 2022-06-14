@@ -18,19 +18,24 @@ const routes: Array<RouteRecordRaw> = [
   },
 
   {
-    path: "/leisure-page",
+    path: "/leisure",
     name: "LeisurePage",
     component: () => import("@/views/TestPage.vue"),
   },
   {
-    path: "/food-page",
+    path: "/food",
     name: "FoodPage",
     component: () => import("@/views/Food.vue"),
   },
   {
-    path: "/lodging-page",
-    name: "LodgingPage",
+    path: "/loodging",
+    name: "LoodgingPage",
     component: () => import("@/views/Lodging.vue"),
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "NotFound",
+    component: () => import("@/components/NotFound.vue"),
   },
 ];
 
