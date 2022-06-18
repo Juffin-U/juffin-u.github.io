@@ -33,6 +33,11 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import("@/views/Lodging.vue"),
   },
   {
+    path: "/callBack",
+    name: "callBack",
+    component: () => import("@/views/callBack.vue"),
+  },
+  {
     path: "/:pathMatch(.*)*",
     name: "NotFound",
     component: () => import("@/components/NotFound.vue"),
@@ -42,6 +47,10 @@ const routes: Array<RouteRecordRaw> = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+  scrollBehavior() {
+    // document.getElementById("app")?.scrollIntoView();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  },
 });
 
 export default router;

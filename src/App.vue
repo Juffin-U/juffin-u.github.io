@@ -1,39 +1,21 @@
 <template>
   <router-view />
-  <div class="basement">
-    <div class="linkLogoCont">
-      <div class="formLogo">
-        <router-link to="/" class="linkLogo"></router-link>
-      </div>
-    </div>
-    <div class="callBackCont">
-      <div class="headrCont">Связаться с нами</div>
-      <div class="callbackContText">
-        <p>Телефон: +7 (913) 210-19-19</p>
-        <p>Почта: green_sad22@mail.ru</p>
-        <p>Адрес: г.Барнаул, ул.Власихинская, 67а/210</p>
-      </div>
-    </div>
-    <div class="linksCont">
-      <div class="mediaLink">1</div>
-      <div class="mediaLink">2</div>
-      <div class="mediaLink">3</div>
-      <div class="mediaLink">4</div>
-    </div>
-  </div>
 </template>
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Comic Sans MS, Comic Sans, cursive;
+  font-size: large;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }
 .basement {
+  color: white;
+  font-size: x-large;
   width: 100%;
-  height: 200px;
+  height: 260px;
   display: flex;
   flex-direction: row;
   background-color: #00a62a;
@@ -61,6 +43,7 @@
   border-radius: 130px;
 }
 .callBackCont {
+  text-decoration: none;
   height: 90%;
   width: 70%;
   margin: auto;

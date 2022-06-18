@@ -1,10 +1,14 @@
 <template>
   <div class="notFoundCont"></div>
+  <BasementComponent></BasementComponent>
 </template>
 
 <script>
+import BasementComponent from "@/components/BasmentComponent";
+
 export default {
   name: "NotFound",
+  components: { BasementComponent },
 };
 </script>
 

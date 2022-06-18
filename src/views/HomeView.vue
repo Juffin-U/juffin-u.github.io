@@ -51,82 +51,81 @@
             </div>
           </div>
           <div class="sliderContainer">
-            <div
-              style="height: 100%; background-size: cover"
-              :style="{
-                backgroundImage:
-                  'url(' +
-                  require(`../assets/${arrOfIndex[indexOfImage][indexOfSection]}`) +
-                  ')',
-              }"
-            >
-              {{ indexOfImage }}
-              {{ arrOfIndex[indexOfSection].length }}
+            <div style="height: 100%; background-size: cover">
+              <vueper-slides
+                arrows-inside
+                bullets-inside
+                class="no-shadow"
+                transition-speed="250"
+              >
+                <vueper-slide
+                  v-for="(imagePath, i) in arrOfIndex[indexOfSection]"
+                  :key="i"
+                  :image="imagePath"
+                />
+              </vueper-slides>
             </div>
-            <button
-              class="button"
-              @click="
-                indexOfImage > 0
-                  ? (indexOfImage -= 1)
-                  : (indexOfImage = arrOfIndex[indexOfSection].length - 1)
-              "
-            >
-              &lt;-
-            </button>
-
-            <button
-              class="button"
-              @click="
-                indexOfImage < arrOfIndex[indexOfSection].length - 1
-                  ? (indexOfImage += 1)
-                  : (indexOfImage = 0)
-              "
-            >
-              ->
-            </button>
           </div>
         </div>
       </div>
     </div>
+    <basement-component></basement-component>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
+import { VueperSlides, VueperSlide } from "vueperslides";
+import "vueperslides/dist/vueperslides.css";
+import BasementComponent from "@/components/BasmentComponent.vue";
 
 export default defineComponent({
   name: "HomeView",
+  components: { BasementComponent, VueperSlides, VueperSlide },
+  data: () => ({
+    slides: [
+      {
+        title: "Slide #1",
+        content: "Slide 1 content.",
+      },
+      {
+        title: "Slide #2",
+        content: "Slide 2 content.",
+      },
+    ],
+  }),
+
   setup() {
     let indexOfImage = ref(0);
     let indexOfSection = ref(0);
 
     let arrOfIndex: string[][] = [
       [
-        "food2.webp",
-        "food3.webp",
-        "food5.webp",
-        "food6.webp",
-        "food9.webp",
-        "food10.webp",
+        require("@/assets/food2.webp"),
+        require("@/assets/food3.webp"),
+        require("@/assets/food5.webp"),
+        require("@/assets/food6.webp"),
+        require("@/assets/food9.webp"),
+        require("@/assets/food10.webp"),
       ],
       [
-        "leisure2.webp",
-        "leisure1.jpg",
-        "leisure5.webp",
-        "leisure6.webp",
-        "leisure9.webp",
-        "leisure10.webp",
-        "leisure12.webp",
-        "leisure13.webp",
+        require("@/assets/leisure2.webp"),
+        require("@/assets/leisure1.jpg"),
+        require("@/assets/leisure5.webp"),
+        require("@/assets/leisure6.webp"),
+        require("@/assets/leisure9.webp"),
+        require("@/assets/leisure10.webp"),
+        require("@/assets/leisure12.webp"),
+        require("@/assets/leisure13.webp"),
       ],
       [
-        "Looding2.webp",
-        "Looding3.webp",
-        "Looding4.webp",
-        "Looding5.webp",
-        "Looding6.webp",
-        "Looding7.webp",
-        "Looding9.webp",
+        require("@/assets/Looding2.webp"),
+        require("@/assets/Looding3.webp"),
+        require("@/assets/Looding4.webp"),
+        require("@/assets/Looding5.webp"),
+        require("@/assets/Looding6.webp"),
+        require("@/assets/Looding7.webp"),
+        require("@/assets/Looding9.webp"),
       ],
     ];
     return {
@@ -139,6 +138,12 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+.ex--center-mode {
+  width: 600px;
+  max-width: 100%;
+  margin: auto;
+}
+
 .infoContainer {
   height: 40%;
   margin-top: -18%;
@@ -150,7 +155,7 @@ export default defineComponent({
 }
 .mainContainer {
   width: 100%;
-  height: 2660px;
+  height: 3360px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -178,7 +183,7 @@ export default defineComponent({
 }
 .sliderContainer {
   height: 50%;
-  width: 40%;
+  width: 60%;
   margin: auto;
   background-size: cover;
 }
@@ -202,16 +207,16 @@ export default defineComponent({
 }
 .imgLodging {
   background-size: cover;
-  background: url(../assets/Looding.jpeg) no-repeat center;
+  background: url(../assets/Looding3.webp) no-repeat center;
   width: 33%;
 }
 .mainIntroductionToTheDescription {
   color: rgb(0, 166, 42);
   font-size: 40px;
-  font-family: sans-serif;
+  font-family: Comic Sans MS, Comic Sans, cursive;
 }
 .mainDescription {
-  font-family: sans-serif;
+  font-family: Comic Sans MS, Comic Sans, cursive;
   font-size: 24px;
 }
 .mainHeaderText {
@@ -221,7 +226,7 @@ export default defineComponent({
   font-size: 70px;
   line-height: 1.17;
   letter-spacing: 5px;
-  font-family: Arial, serif;
+  font-family: Comic Sans MS, Comic Sans, cursive;
   height: 50%;
   display: flex;
   color: bisque;
@@ -234,7 +239,7 @@ export default defineComponent({
   line-height: 1.5;
   display: flex;
   color: bisque;
-  font-family: Arial, serif;
+  font-family: Comic Sans MS, Comic Sans, cursive;
   font-weight: 300;
   margin-bottom: 35%;
 }
