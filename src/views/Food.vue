@@ -185,6 +185,7 @@ export default {
   width: 45%;
   margin: auto;
   background-size: cover;
+  z-index: 2;
 }
 .infoCont {
   width: 45%;
