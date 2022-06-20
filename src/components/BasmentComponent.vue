@@ -1,10 +1,5 @@
 <template>
   <div class="basement">
-    <div class="linkLogoCont">
-      <div class="formLogo">
-        <router-link to="/" class="linkLogo"></router-link>
-      </div>
-    </div>
     <div class="callBackCont">
       <a
         style="color: white; font-size: 38px; text-decoration: none"

@@ -45,7 +45,7 @@
 .callBackCont {
   text-decoration: none;
   height: 90%;
-  width: 70%;
+  width: 90%;
   margin: auto;
   display: flex;
   align-items: center;
@@ -64,7 +64,7 @@
   width: auto;
 }
 .linksCont {
-  width: 15%;
+  width: 5%;
   display: flex;
   flex-direction: column;
   align-items: end;

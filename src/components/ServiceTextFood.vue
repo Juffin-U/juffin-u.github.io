@@ -1,8 +1,13 @@
 <template>
-  <div>
+  <div style="width: 100%">
     <div class="headInfo">
-      <h2 class="headText">{{ headerText }}</h2>
-      <div class="t480__line t-margin_auto" style=""></div>
+      <div
+        class="head align"
+        style="display: flex; align-items: center; flex-direction: column"
+      >
+        <h2 class="headText">{{ headerText }}</h2>
+        <div class="t480__line t-margin_auto" style=""></div>
+      </div>
     </div>
     <div class="textCont">
       <p class="bigText" style="color: red">

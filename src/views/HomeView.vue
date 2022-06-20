@@ -30,6 +30,34 @@
       </div>
       <div class="sliderAndLinkContainer">
         <p class="mainIntroductionToTheDescription">Наши услуги</p>
+        <div
+          style="
+            display: flex;
+            justify-content: space-around;
+            flex-direction: row;
+            width: 100%;
+            margin-left: 2.5%;
+          "
+        >
+          <div
+            class="mainIntroductionToTheDescriptionT"
+            style="margin-left: 1%"
+          >
+            Досуг
+          </div>
+          <div
+            class="mainIntroductionToTheDescriptionT"
+            style="margin-left: 3%"
+          >
+            Банкет
+          </div>
+          <div
+            class="mainIntroductionToTheDescriptionT"
+            style="margin-right: 4%"
+          >
+            Проживание
+          </div>
+        </div>
         <div class="solidColumnContainer">
           <div class="linkContainer">
             <div class="lineImageContainer">
@@ -78,6 +106,7 @@ import { defineComponent, ref } from "vue";
 import { VueperSlides, VueperSlide } from "vueperslides";
 import "vueperslides/dist/vueperslides.css";
 import BasementComponent from "@/components/BasmentComponent.vue";
+import HatComponent from "@/components/HatCompomnent.vue";
 
 export default defineComponent({
   name: "HomeView",
@@ -168,15 +197,15 @@ export default defineComponent({
   /* Позиция картинкипо центру */
   background: url(../assets/logo.webp) no-repeat center;
 }
-.button {
-}
 .sliderAndLinkContainer {
   width: 85%;
   height: 50%;
   margin: auto auto 10%;
 }
 .linkContainer {
-  height: 50%;
+  height: auto;
+  margin-top: -3%;
+  margin-bottom: 5%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -209,10 +238,16 @@ export default defineComponent({
   background-size: cover;
   background: url(../assets/Looding3.webp) no-repeat center;
   width: 33%;
+  height: 500px;
 }
 .mainIntroductionToTheDescription {
   color: rgb(0, 166, 42);
   font-size: 40px;
+  font-family: Comic Sans MS, Comic Sans, cursive;
+}
+.mainIntroductionToTheDescriptionT {
+  color: rgb(0, 166, 42);
+  font-size: 30px;
   font-family: Comic Sans MS, Comic Sans, cursive;
 }
 .mainDescription {
@@ -253,7 +288,7 @@ export default defineComponent({
   margin: auto;
 }
 .solidColumnContainer {
-  height: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
 }
@@ -267,9 +302,11 @@ export default defineComponent({
 }
 .lineImageContainer {
   display: flex;
+  width: 92%;
   flex-direction: row;
   justify-content: space-between;
-  height: 80%;
+  height: auto;
+  margin-left: 5%;
   margin-top: 3.5%;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <BasementComponent></BasementComponent>
+  <HatCompomnent></HatCompomnent>
   <div class="mainCont">
     <HeadComponent
       class="contentContH"
@@ -21,12 +21,15 @@
     >
     </ServiceContent>
   </div>
+  <BasementComponent></BasementComponent>
 </template>
 
 <script>
 import ServiceContent from "@/components/ServiceContent";
 import HeadComponent from "@/components/HeadComponent";
 import BasementComponent from "@/components/BasmentComponent";
+import HatCompomnent from "@/components/HatCompomnent";
+import Food from "@/views/Food";
 
 const slides = [
   [
@@ -58,11 +61,42 @@ export default {
           name: "Аренда Коттеджа",
           discript: "2-х этажный коттедж 500 м² на участке 20 соток",
           arrayComponents: [
-            "На 1 этаже банкетный зал на 65 человек, кондиционеры, музыкальныеколонки,светомузыка, телевизор с большим экраном со Smart TV, сбольшими витражными окнами с выходом на застекленную веранду;",
-            "На веранде большая печь барбекю с возможностью готовить на открытомогне, на мангале и в казане на 10 - 22 литров, шпажками, решетками длябарбекю;",
-            "Кухня со всем необходимым оборудованием, 2 санузла, гардероб;",
-            "На цокольном этаже большой караоке зал с мягкими диванами и столиками, музыкальными колонками, светомузыкой. Также караоке с большим экраном на стене;",
-            "На 2 этаже гостиничные номера люкс с 2-х спальными кроватями,кондиционерами, телевизорами со Smart TV, чайниками, посудой,холодильником, 4 однокомнатных и 1 двухкомнатный. Всего 17 спальныхмест;",
+            [
+              "Банкетный зал на 65 человек;",
+              "кондиционеры;",
+              "музыкальные колонки;",
+              "светомузыка;",
+              "телевизор с большим экраном со Smart TV;",
+              "Большая печь барбекю c решетками;",
+              "Мангал c шпажками;",
+              "Казан на 10 - 22 литров;",
+              "Кухня со всем необходимым оборудованием; ",
+              "2 санузла;",
+              "Гардероб;",
+              "Большой караоке зал с мягкими диванами и столиками;",
+              "Гостиничные номера люкс с 2-х спальными кроватями ",
+              "Чайник;",
+              "Холодильник;",
+              "Всего 17 спальныхмест;",
+            ],
+            [
+              "humans",
+              "conditioner",
+              "music",
+              "io",
+              "TV",
+              "bbq",
+              "kebab",
+              "pot",
+              "oven",
+              "toilet",
+              "wardrobe",
+              "bench",
+              "home",
+              "teapot",
+              "refrigerator",
+              "humans",
+            ],
           ],
           price: 50000,
           imagePaths: slides[0],
@@ -71,12 +105,15 @@ export default {
           name: "Аренда однокомнатного Гостиничного номера Люкс",
           discript: "Однокомнатный гостиничный люкс с 2-х спальной кроватью",
           arrayComponents: [
-            "Кондиционер;",
-            "Телевизор со Smart TV;",
-            "Чайник;",
-            "Холодильник;",
-            "обственный санузел;",
-            "Душевая;",
+            [
+              "Кондиционер;",
+              "Телевизор со Smart TV;",
+              "Чайник;",
+              "Холодильник;",
+              "обственный санузел;",
+              "Душевая;",
+            ],
+            ["conditioner", "TV", "teapot", "refrigerator", "toilet", "shower"],
           ],
           price: 2000,
           imagePaths: slides[1],
@@ -86,11 +123,14 @@ export default {
           discript:
             "Двухкомнатный гостиничный люкс с двумя 2-х спальными кроватями",
           arrayComponents: [
-            "Кондиционер;",
-            "Телевизор со Smart TV;",
-            "Чайник;",
-            "обственный санузел;",
-            "Душевая;",
+            [
+              "Кондиционер;",
+              "Телевизор со Smart TV;",
+              "Чайник;",
+              "обственный санузел;",
+              "Душевая;",
+            ],
+            ["conditioner", "TV", "teapot", "toilet", "shower"],
           ],
           price: 4000,
           imagePaths: slides[2],
@@ -106,106 +146,13 @@ export default {
       ],
     };
   },
-  components: { BasementComponent, HeadComponent, ServiceContent },
+  components: {
+    BasementComponent,
+    HeadComponent,
+    ServiceContent,
+    HatCompomnent,
+  },
 };
 </script>
 
-<style lang="scss">
-.mainCont {
-  width: 100%;
-  height: 4560px;
-  display: flex;
-  flex-direction: column;
-  margin-left: auto;
-  margin-right: auto;
-}
-.contentCont {
-  width: 80%;
-  height: 20%;
-  display: flex;
-  flex-direction: row;
-  margin: auto;
-  justify-content: space-between;
-}
-
-.contentContH {
-  width: 80%;
-  height: 15%;
-  display: flex;
-  flex-direction: row;
-  margin: auto;
-  justify-content: space-between;
-}
-
-.t480__line {
-  margin: -3.5% auto auto;
-  max-width: 65px;
-  width: 100%;
-  height: 3px;
-  background-color: #666;
-  display: block;
-}
-.sliderCont {
-  height: 85%;
-  width: 45%;
-  margin: auto;
-}
-.infoCont {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 35%;
-  margin: 0 auto auto;
-}
-.infoContH {
-  height: 40%;
-  width: 35%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 0 auto auto;
-}
-.headInfo {
-  margin-right: auto;
-  margin-left: auto;
-  width: 80%;
-  height: 30%;
-}
-
-.textCont {
-  font-family: Comic Sans MS, Comic Sans, cursive;
-  text-align: left;
-  margin: auto;
-  height: 60%;
-  width: 80%;
-  font-size: x-large;
-  color: #000;
-}
-.headText {
-  color: rgb(0, 166, 42);
-  text-align: center;
-  font-family: Arial, serif;
-  font-size: 40px;
-}
-.text {
-  text-align-all: left;
-  font-family: Comic Sans MS, Comic Sans, cursive;
-  font-size: 20px;
-  font-weight: 300;
-  color: #000;
-}
-.greenText {
-  text-align-all: left;
-  font-size: x-large;
-  font-family: Comic Sans MS, Comic Sans, cursive;
-  color: rgb(0, 166, 42);
-  font-weight: bold;
-}
-.bigText {
-  text-align: left;
-  font-family: Comic Sans MS, Comic Sans, cursive;
-  font-size: x-large;
-  font-weight: 300;
-  color: #000;
-}
-</style>
+<style lang="scss"></style>

@@ -1,8 +1,7 @@
 <template>
+  <HatComponent></HatComponent>
   <div class="mainCallBackCont">
-    <div class="head">
-      <router-link to="/" class="linkLogoC"></router-link>
-    </div>
+    <div class="head"></div>
     <div class="mapCont">
       <div class="map">
         <iframe
@@ -16,9 +15,6 @@
         <p>Адрес: г.Барнаул, ул.Власихинская, 67а/210</p>
       </div>
     </div>
-    <b-button>Button</b-button>
-    <b-button variant="danger">Button</b-button>
-    <b-button variant="outline-primary">Primary</b-button>
     <div class="linkPanel">
       <div class style="display: flex; margin: auto; background-size: cover">
         <a href="https://vk.com/greensad_22">
@@ -128,16 +124,17 @@
 </template>
 
 <script>
+import HatComponent from "@/components/HatCompomnent";
 export default {
   name: "callBack",
-  components: {},
+  components: { HatComponent },
 };
 </script>
 
 <style scoped>
 .mainCallBackCont {
   width: 100%;
-  height: 1049px;
+  height: 1009px;
   display: flex;
   flex-direction: column;
   margin-left: auto;
@@ -147,7 +144,7 @@ export default {
   display: flex;
   margin-left: auto;
   margin-right: auto;
-  height: 15%;
+  height: 5%;
 }
 .mapCont {
   font-family: Comic Sans MS, Comic Sans, cursive;
@@ -156,10 +153,14 @@ export default {
   display: flex;
   margin-left: auto;
   margin-right: auto;
-  height: 70%;
+  width: 60%;
+  height: 80%;
   flex-direction: column;
 }
 .map {
+  outline: 3px solid rgb(0, 166, 42);
+  border: 3px solid rgb(0, 166, 42);
+  border-radius: 10px;
   height: 90%;
 }
 .address {
@@ -173,7 +174,7 @@ export default {
   display: flex;
   margin-left: auto;
   margin-right: auto;
-  height: 15%;
+  height: 10%;
   flex-direction: row;
   justify-content: space-between;
 }

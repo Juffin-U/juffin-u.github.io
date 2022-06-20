@@ -10,7 +10,6 @@
       />
       <ServiceTextFood
         v-else
-        :symbol="symbol"
         :headerText="headerText"
         :content="content"
         :description="description"
@@ -23,6 +22,7 @@
         bullets-inside
         class="no-shadow"
         transition-speed="250"
+        :slide-ratio="0.7"
       >
         <vueper-slide
           v-for="(imagePath, i) in imagePaths"

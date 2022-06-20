@@ -16,6 +16,7 @@
         bullets-inside
         class="no-shadow"
         transition-speed="250"
+        :slide-ratio="0.7"
       >
         <vueper-slide
           v-for="(imagePath, i) in imagePaths"

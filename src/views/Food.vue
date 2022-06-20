@@ -1,5 +1,5 @@
 <template>
-  <BasementComponent></BasementComponent>
+  <HatCompomnent></HatCompomnent>
   <div class="mainCont">
     <HeadComponent
       class="contentContH"
@@ -25,12 +25,14 @@
     >
     </ServiceContentFood>
   </div>
+  <BasementComponent></BasementComponent>
 </template>
 
 <script>
 import ServiceContentFood from "@/components/ServiceContentFood";
 import HeadComponent from "@/components/HeadComponent";
 import BasementComponent from "@/components/BasmentComponent";
+import HatCompomnent from "@/components/HatCompomnent";
 
 const slides = [
   [
@@ -64,11 +66,11 @@ export default {
             [
               "Кондиционеры;",
               "Светомузыка;",
-              "Музыкальные колонки с возможностью запуска со смартфона, флешки или ноутбука ;",
+              "Музыкальные колонки;",
               "Караоке;",
-              "Телевизор с большим экраном и Smart TV.",
+              "Телевизор с большим экраном и Smart TV;",
             ],
-            ["барбекю"],
+            ["conditioner", "io", "music", "microphone", "TV"],
           ],
           price: 1500,
           arrayComponentsLust: [
@@ -85,11 +87,10 @@ export default {
           arrayComponents: [
             [
               "Печь барбекю;",
-              "Мангал;",
-              "Шпажки и решётки для шашлыка;",
+              "Мангал, шпажки и решётки для шашлыка;",
               "Казан - 10 и 22 литра.",
             ],
-            ["барбекю"],
+            ["bbq", "kebab", "pot"],
           ],
           price: 3000,
           arrayComponentsLust: [],
@@ -102,9 +103,10 @@ export default {
           discript: "Дополнительно к Банкетному залу",
           arrayComponents: [
             [
-              "Оборудованная кухня со всем необходимым для приготовления блюд, на которой вы можете приготовить сами из ваших собственных продуктов со своим алкоголем или пригласить повара.",
+              "Оборудованная кухня со всем необходимым для приготовления блюд;",
+              "Повар;",
             ],
-            ["барбекю"],
+            ["oven", "kok"],
           ],
           price: 2500,
           arrayComponentsLust: [],
@@ -124,34 +126,42 @@ export default {
       ],
     };
   },
-  components: { BasementComponent, HeadComponent, ServiceContentFood },
+  components: {
+    BasementComponent,
+    HeadComponent,
+    ServiceContentFood,
+    HatCompomnent,
+  },
 };
 </script>
 
 <style lang="scss">
 .mainCont {
   width: 100%;
-  height: 4560px;
+  height: auto;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   margin-left: auto;
   margin-right: auto;
 }
 .contentCont {
-  width: 80%;
-  height: 20%;
+  width: 90%;
+  height: auto;
   display: flex;
   flex-direction: row;
-  margin: auto;
+
   justify-content: space-between;
+  margin: 5% auto 10%;
 }
 
 .contentContH {
   width: 80%;
-  height: 15%;
+  height: auto;
   display: flex;
   flex-direction: row;
-  margin: auto;
+  margin: 10% auto;
   justify-content: space-between;
 }
 .t4801__line {
@@ -163,24 +173,28 @@ export default {
   display: block;
 }
 .t480__line {
-  margin: -3.5% auto auto;
+  display: flex;
+  align-items: center;
   max-width: 65px;
   width: 100%;
   height: 3px;
   background-color: #666;
-  display: block;
 }
 .sliderCont {
-  height: 85%;
+  height: 500px;
   width: 45%;
   margin: auto;
+  background-size: cover;
 }
 .infoCont {
-  width: 35%;
+  width: 45%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin: 0 auto auto;
+}
+.textService {
+  width: 70%;
 }
 .infoContH {
   height: 40%;
@@ -194,18 +208,31 @@ export default {
   margin-right: auto;
   margin-left: auto;
   width: 80%;
-  height: 30%;
+  height: auto;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+}
+.headInfoA {
+  margin-right: auto;
+  margin-left: auto;
+  width: 80%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .textCont {
+  overflow: clip;
   font-family: Comic Sans MS, Comic Sans, cursive;
   text-align: left;
   margin: auto;
-  height: 60%;
-  width: 80%;
+  height: auto;
+  width: 95%;
   font-size: x-large;
   color: #000;
 }
+
 .headText {
   color: rgb(0, 166, 42);
   text-align: center;
@@ -216,7 +243,11 @@ export default {
   text-align-all: left;
   font-family: Comic Sans MS, Comic Sans, cursive;
   font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   font-weight: 300;
+  width: 100%;
   color: #000;
 }
 .greenText {

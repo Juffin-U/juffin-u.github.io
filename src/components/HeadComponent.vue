@@ -8,7 +8,7 @@
       }"
     ></div>
     <div class="infoContH">
-      <div class="headInfo">
+      <div class="headInfoA">
         <h2 class="headText">{{ headText }}</h2>
       </div>
       <div class="textCont">

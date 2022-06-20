@@ -1,5 +1,5 @@
 <template>
-  <BasementComponent></BasementComponent>
+  <HatCompomnent></HatCompomnent>
   <div class="mainCont">
     <HeadComponent
       class="contentContH"
@@ -23,12 +23,15 @@
     >
     </ServiceContentLeisure>
   </div>
+  <BasementComponent></BasementComponent>
 </template>
 
 <script>
 import ServiceContentLeisure from "@/components/ServiceContentLeisure";
 import HeadComponent from "@/components/HeadComponent";
 import BasementComponent from "@/components/BasmentComponent";
+import Food from "@/views/Food";
+import HatCompomnent from "@/components/HatCompomnent";
 
 const slides = [
   [
@@ -60,14 +63,36 @@ export default {
           name: "Русская баня на дровах",
           discript: "Уютная баня с обеденной зоной для вашего праздника!",
           arrayComponents: [
-            "Вместимость за столом до 12 человек;",
-            "Печь в парной с двойной каменкой обложена камнем жадеитом;",
-            "Можно поддавать и париться веником!;",
-            "В бане теплый пол, туалет, душевая;",
-            "Стол, лавочки;",
-            "Музыкальная колонка со светомузыкой- есть возможность запуска со своего смартфона или флешки;",
-            "Чайник, микроволновка, холодильник+ посуда;",
-            "Телевизоров со смарт-тв;",
+            [
+              "Вместимость за столом до 12 человек;",
+              "Печь в парной с двойной каменкой обложена камнем жадеитом;",
+              "Можно поддавать и париться веником;",
+              "В бане теплый пол;",
+              "Туалет;",
+              "Душевая;",
+              "Стол, лавочки;",
+              "Музыкальная колонка со светомузыкой;",
+              "Чайник;",
+              "Микроволновка;",
+              "Холодильник;",
+              "Посуда;",
+              "Телевизоров со смарт-тв;",
+            ],
+            [
+              "humans",
+              "hot",
+              "hand",
+              "heat",
+              "toilet",
+              "shower",
+              "bench",
+              "music",
+              "teapot",
+              "oven",
+              "refrigerator",
+              "dishes",
+              "TV",
+            ],
           ],
           price: 1250,
           arrayComponentsLust: [
@@ -82,12 +107,36 @@ export default {
           discript:
             "Большая тёплая уютная беседка вместимостью до 36 человек, с возможностью готовить на открытом огне на мангале и в казане",
           arrayComponents: [
-            "Светомузыка, музыкальная колонка - есть возможность запуска со своего смартфона или флешки (тогда дадим пульт);",
-            "Холодильник, микроволновка, чайник, теплая вода;",
-            "Телевизор с подключением караоке;",
-            "Печь барбекю, мангал, шпажки и решётки для шашлыка, казан - 10 и 22 литра;",
-            "В беседке высокие потолки и витражные окна, стулья с подлокотниками и мягкими подушками;",
-            "Тёплый туалет с водой, гигиенический душ, раковина;",
+            [
+              "Светомузыка;",
+              "музыкальная колонка;",
+              "Холодильник;",
+              "микроволновка;",
+              "чайник;",
+              "Телевизор с подключением караоке;",
+              "Печь барбекю;",
+              "Мангал, шпажки и решётки для шашлыка;",
+              "Казан - 10 и 22 литра;",
+              "В беседке высокие потолки и витражные окна;",
+              "Стулья с подлокотниками и мягкими подушками;",
+              "Туалет;",
+              "Гигиенический душ и раковина;",
+            ],
+            [
+              "io",
+              "music",
+              "refrigerator",
+              "oven",
+              "teapot",
+              "microphone",
+              "bbq",
+              "kebab",
+              "pot",
+              "home",
+              "bench",
+              "toilet",
+              "shower",
+            ],
           ],
           price: 1500,
           arrayComponentsLust: [
@@ -102,11 +151,15 @@ export default {
           discript:
             "Караоке зал с мягкими диванами и столиками на 30 посадочных мест, с мангальной зоной на улице",
           arrayComponents: [
-            "Светомузыка;",
-            "Музыкальные колонки с возможностью запуска со смартфона, флешки или ноутбука;",
-            "Караоке с проектором и большим экраном на стене;",
-            "Холодильник, чайник;",
-            "Вход в караоке зал отдельный с отдельный санузлом;",
+            [
+              "Светомузыка;",
+              "Музыкальные колонки;",
+              "Караоке с проектором и большим экраном на стене;",
+              "Холодильник;",
+              "Чайник;",
+              "Вход в караоке зал отдельный с отдельный санузлом;",
+            ],
+            ["io", "music", "microphone", "refrigerator", "teapot", "toilet"],
           ],
           price: 1500,
           arrayComponentsLust: [
@@ -127,112 +180,13 @@ export default {
       ],
     };
   },
-  components: { BasementComponent, HeadComponent, ServiceContentLeisure },
+  components: {
+    BasementComponent,
+    HeadComponent,
+    ServiceContentLeisure,
+    HatCompomnent,
+  },
 };
 </script>
 
-<style lang="scss">
-.mainCont {
-  width: 100%;
-  height: 4560px;
-  display: flex;
-  flex-direction: column;
-  margin-left: auto;
-  margin-right: auto;
-}
-.contentCont {
-  width: 80%;
-  height: 20%;
-  display: flex;
-  flex-direction: row;
-  margin: auto;
-  justify-content: space-between;
-}
-.contentCont {
-  width: 80%;
-  height: 15%;
-  display: flex;
-  flex-direction: row;
-  margin: auto;
-  justify-content: space-between;
-}
-.contentContH {
-  width: 80%;
-  height: 15%;
-  display: flex;
-  flex-direction: row;
-  margin: auto;
-  justify-content: space-between;
-}
-.t480__line {
-  margin: -3.5% auto auto;
-  max-width: 65px;
-  width: 100%;
-  height: 3px;
-  background-color: #666;
-  display: block;
-}
-.sliderCont {
-  height: 85%;
-  width: 45%;
-  margin: auto;
-}
-.infoCont {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 35%;
-  margin: 0 auto auto;
-}
-.infoContH {
-  height: 40%;
-  width: 35%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 0 auto auto;
-}
-.headInfo {
-  margin-right: auto;
-  margin-left: auto;
-  width: 80%;
-  height: 30%;
-}
-
-.textCont {
-  font-family: Comic Sans MS, Comic Sans, cursive;
-  text-align: left;
-  margin: auto;
-  height: 60%;
-  width: 80%;
-  font-size: x-large;
-  color: #000;
-}
-.headText {
-  color: rgb(0, 166, 42);
-  text-align: center;
-  font-family: Arial, serif;
-  font-size: 40px;
-}
-.text {
-  text-align-all: left;
-  font-family: Comic Sans MS, Comic Sans, cursive;
-  font-size: 20px;
-  font-weight: 300;
-  color: #000;
-}
-.greenText {
-  text-align-all: left;
-  font-size: x-large;
-  font-family: Comic Sans MS, Comic Sans, cursive;
-  color: rgb(0, 166, 42);
-  font-weight: bold;
-}
-.bigText {
-  text-align: left;
-  font-family: Comic Sans MS, Comic Sans, cursive;
-  font-size: x-large;
-  font-weight: 300;
-  color: #000;
-}
-</style>
+<style lang="scss"></style>
